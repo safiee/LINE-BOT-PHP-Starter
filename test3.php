@@ -1,4 +1,3 @@
-// /callback/index.php
 <?php
 // Show all errors for testing
 error_reporting(E_ALL);
