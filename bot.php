@@ -1,5 +1,4 @@
 <?php
-$access_token = 'z2TVe07oCkUP2/cDQ8/Y8w+zT6HHfHDF6rRKuewNXRK5qA25Fbkgkl2xQTqSd+tnZ4z1Bacb4YVSi99KuuC5TKbUOJdDNPR2MPWMH+iesB4LI9mcNAsz9HyWcMFWsQYCaIczAdBRSg+W04nC399yOwdB04t89/1O/w1cDnyilFU=';
 		$json_string = file_get_contents('php://input');
         $jsonObj = json_decode($json_string); //รับ JSON มา decode เป็น StdObj
         $to = $jsonObj-&gt;{"result"}[0]-&gt;{"content"}-&gt;{"from"}; //หาผู้ส่ง
@@ -47,23 +46,19 @@ $access_token = 'z2TVe07oCkUP2/cDQ8/Y8w+zT6HHfHDF6rRKuewNXRK5qA25Fbkgkl2xQTqSd+t
 							} 
 				
 		$response_format_text = ['contentType'=>1,"toType"=>1,"text"=>$result_text]; 
-		}
-			else if($text == 'บอกมา'){ //คำอื่นๆ ที่ต้องการให้ Bot ตอบกลับเมื่อโพสคำนี้มา เช่นโพสว่า บอกมา ให้ตอบว่า ความลับนะ 
+		}else if($text == 'บอกมา'){ //คำอื่นๆ ที่ต้องการให้ Bot ตอบกลับเมื่อโพสคำนี้มา เช่นโพสว่า บอกมา ให้ตอบว่า ความลับนะ 
 				$response_format_text = ['contentType'=>1,"toType"=>1,"text"=>"ความลับนะ"]; 
 				}else{//นอกนั้นให้โพส สวัสดี 
-					$response_format_text = ['contentType'=>1,"toType"=>1,"text"=>"สวัสดี"]; 
-					} 
+					$response_format_text = ['contentType'=>1,"toType"=>1,"text"=>"สวัสดี"]; } 
 					
 					// toChannel?eventType
-					$post_data = ["to"=>[$to],"toChannel"=>"1383378250","eventType"=>"138311608800106203","content"=>$response_format_text]; //ส่งข้อมูลไป 
+					$post_data = ["to"=>[$to],"toChannel"=>"1496327818","eventType"=>"138311608800106203","content"=>$response_format_text]; //ส่งข้อมูลไป 
 					$ch = curl_init("https://trialbot-api.line.me/v1/events"); 
 					curl_setopt($ch, CURLOPT_POST, true); 
 					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST'); 
 					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
 					curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data)); 
-					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-					curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-				    $result = curl_exec($ch);
-					curl_close($ch);
-					echo $result . "\r\n";		
+					curl_setopt($ch, CURLOPT_HTTPHEADER, array( 'Content-Type: application/json; charser=UTF-8', 'X-Line-ChannelID: YOUR ChannelID', 'X-Line-ChannelSecret: YOUR ChannelSecret', 'X-Line-Trusted-User-With-ACL: YOUR MID' )); 
+					$result = curl_exec($ch); curl_close($ch); 
+					echo $result . "\r\n";
 ?>					
