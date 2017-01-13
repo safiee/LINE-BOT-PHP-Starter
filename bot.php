@@ -44,8 +44,8 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-else{
-	$text = $event['message']['text'];
+	else if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
