@@ -1,7 +1,7 @@
 <html>
 <head>
 
-<title>test</title>
+<title>tests</title>
 
 <meta http-equiv="Content-Language" content="th"> 
 <meta http-equiv="content-Type" content="text/html; charset=window-874"> 
@@ -89,7 +89,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => 'กรูณาถามให้ตรงเงื่อนไข'
+				'text' => $text
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
