@@ -44,13 +44,13 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 			}
 			else {
-				if( $text == 1 ){
+				if( $text == '1' ){
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => 'ดีจ้าขอบคุณสำหรับคำถาม'
+				'text' => 'yes'
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
@@ -79,7 +79,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => 'ดีจ้าขอบคุณสำหรับคำถาม'
+				'text' => 'กรุณากรอดให้ตรงเงือนไข'
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
