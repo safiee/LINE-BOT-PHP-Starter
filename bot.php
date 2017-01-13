@@ -1,3 +1,13 @@
+<html>
+<head>
+
+<title>test</title>
+
+<meta http-equiv="Content-Language" content="th"> 
+<meta http-equiv="content-Type" content="text/html; charset=window-874"> 
+<meta http-equiv="content-Type" content="text/html; charset=tis-620"> 
+
+
 <?php
 $access_token = 'z2TVe07oCkUP2/cDQ8/Y8w+zT6HHfHDF6rRKuewNXRK5qA25Fbkgkl2xQTqSd+tnZ4z1Bacb4YVSi99KuuC5TKbUOJdDNPR2MPWMH+iesB4LI9mcNAsz9HyWcMFWsQYCaIczAdBRSg+W04nC399yOwdB04t89/1O/w1cDnyilFU=';
 
@@ -110,3 +120,12 @@ if (!is_null($events['events'])) {
 }
 
 echo "OK";
+
+?>
+</head>
+<body>
+ 
+</body>
+
+</html>
+
