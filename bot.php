@@ -43,7 +43,7 @@ if (!is_null($events['events'])) {
 
 			echo $result . "\r\n";
 			}
-			else if {
+			else {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
